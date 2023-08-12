@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#A bash Script that display "bad luck" on the 4th, "good luck" on the 8th, and "Best School" on the rest of iterations
+
+n=1
+
+while [ $n -le 10 ]
+do
+	if [ $n -eq 4 ]
+	then 
+		echo "bad luck"
+	elif [ $n -eq 8 ]
+	then
+		echo "good luck"
+	else
+		echo "Best School"
+	fi
+	((n+=1))
+done

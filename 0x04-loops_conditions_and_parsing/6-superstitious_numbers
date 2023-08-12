@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#A Bash script that displays numbers from 1 to 20, if display "bad luck from China" for 4th, "bad luck from Japan" for 9th, "bad luck from Italy" for 17th loop iteration"
+
+n=1
+
+while [ $n -le 20 ]
+do
+	case $n in
+		4)
+			echo "$n"
+			echo "bad luck from China"
+			;;
+		9)
+			echo "$n"
+			echo "bad luck from Japan"
+			;;
+		17)
+			echo "$n"
+			echo "bad luck from Italy"
+			;;
+		*)
+			echo "$n"
+			;;
+	esac
+	((n+=1))
+done
