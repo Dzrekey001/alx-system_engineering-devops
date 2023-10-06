@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# ping to IP
-if (( $# < 1 )); then
+# This script pings an IP address passed as an argument
+if [ "$1" == "" ]; then
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
-    exit
+else
+    ping -c 5 "$1"
 fi
-ping "$1" -c 5
