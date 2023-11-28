@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# transfers a file from a client to a server with scp
 file_path=$1
 ip=$2
 username=$3
