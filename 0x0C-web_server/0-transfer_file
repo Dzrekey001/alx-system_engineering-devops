@@ -4,8 +4,11 @@ ip=$2
 username=$3
 ssh_key=$4
 
-if [ "$#" -ne 4 ]; then
+if [ "$#" -lt 3 ]; then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+elif [ "$#" -lt 4 ]; then
+	scp -o StrictHostKeyChecking=no "$file_path" "$username"@"$ip":~/
 else
-	sudo scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_path" "$username"@"$ip":~/
+	scp -o StrictHostKeyChecking=no -i "$ssh_key" "$file_path" "$username"@"$ip":~/
+
 fi
