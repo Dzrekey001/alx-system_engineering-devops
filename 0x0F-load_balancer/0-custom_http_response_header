@@ -4,6 +4,14 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
+# configure firewall to allow request through port 80
+sudo ufw allow 'Nginx HTTP'
+
+sudo mkdir -p /var/www/html
+
+# change permissions to allow us to easily create files in this directory
+sudo chmod -R 755 /var/www
+
 # code to redirect a specific endpoint (eg: redirect /redirect_me to https://youtube.com)
 echo "Hello World!" | sudo tee /var/www/html/index.html
 string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;"
