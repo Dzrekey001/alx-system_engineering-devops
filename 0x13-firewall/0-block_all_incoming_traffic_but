@@ -1,0 +1,4 @@
+sudo ufw deny in from any
+sudo allow 22
+sudo allow 443
+sudo allow 80
