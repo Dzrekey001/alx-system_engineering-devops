@@ -36,7 +36,7 @@ log-error	= /var/log/mysql/error.log
 
 server-id	=1
 log_bin		=/var/log/mysql/mysql-bin.log
-bind_log_do_db	=tyrell_corp
+binlog_do_db	=tyrell_corp
 
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
