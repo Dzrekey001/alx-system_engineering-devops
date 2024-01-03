@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Accessing a REST API for todo lists of employees"""
+import json
 import requests
 from sys import argv
-import json
 
 
 if __name__ == "__main__":
