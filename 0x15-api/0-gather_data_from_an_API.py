@@ -15,7 +15,7 @@ if __name__ == "__main__":
     TOTAL_NUMBER_OF_TASKS = len(todos.json())
     USERNAME = users.json()[0].get('name')
 
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(USERNAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
 
     for task in TASK_DONE:
