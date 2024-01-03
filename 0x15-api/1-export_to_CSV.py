@@ -2,7 +2,6 @@
 """Accessing a REST API for todo lists of employees"""
 import requests
 from sys import argv
-import csv
 
 
 if __name__ == "__main__":
@@ -20,5 +19,7 @@ if __name__ == "__main__":
             n.get("title")] for n in todos.json()]
 
     with open("{}.csv".format(user_id), mode="w") as file:
-        writer = csv.writer(file)
-        writer.writerows(rows)
+        for task in todos.json():
+            file.write('"{}","{}","{}","{}"\n'
+                       .format(user_id, USERNAME, task.get("completed"),
+                               task.get("title")))
