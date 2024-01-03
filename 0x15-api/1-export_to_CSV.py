@@ -16,17 +16,9 @@ if __name__ == "__main__":
     TOTAL_NUMBER_OF_TASKS = len(todos.json())
     USERNAME = users.json()[0].get('name')
 
-    print("Employee {} is done with tasks({}/{}):"
-          .format(USERNAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+    rows = [[user_id, USERNAME, n.get("completed"),
+            n.get("title")] for n in todos.json()]
 
-    for task in TASK_DONE:
-        print("\t {}".format(task.get("title")))
-
-    rows = [[user_id, USERNAME, n["completed"],
-            n["title"]] for n in todos.json()]
-
-    with open("USER_ID.csv", mode="w") as file:
+    with open("{}.csv".format(user_id), mode="w") as file:
         writer = csv.writer(file)
-        writer.writerow(["USER_ID", "USERNAME",
-                        "TASK_COMPLETED_STATUS", "TASK_TITLE"])
         writer.writerows(rows)
